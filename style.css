@@ -1,0 +1,218 @@
+/* Reset Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Corpo da Página */
+body {
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  /* Garante espaçamento em telas pequenas */
+  font-family: "Roboto", Arial, Helvetica;
+}
+
+/* Título */
+h1 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.task-info {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  padding: 9px;
+  border-radius: 5px;
+  margin: 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #000000;
+}
+
+/* Container Principal */
+.container {
+  border: 2px solid white;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Seção de Adição de Tarefas */
+.new-task-container {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 35px 30px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Campo de Entrada */
+.new-task-input {
+  flex: 3;
+  font-size: 1rem;
+  border: 2px solid #d1d3d4;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+}
+
+.new-task-input:focus {
+  outline: none;
+  border-color: #00aaff;
+  ;
+}
+
+/* Botão de Adicionar */
+.new-task-button {
+  flex: 1;
+  border-radius: 10px;
+  font-size: 1rem;
+  border: none;
+  background-color: #0088cc;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.new-task-button:hover {
+  background-color: #0071c5;
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+.new-task-button:active {
+  transform: scale(0.95);
+}
+
+/* Lista de Tarefas */
+.tasks-container {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+/* Itens da Tarefa */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item i {
+  background-color: #0088cc;
+  color: white;
+  padding: 11px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #fff;
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.footer a {
+  color: #0088cc;
+  /* Azul ciano escuro */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #0673c6;
+  /* Um azul mais escuro no hover */
+}
+
+
+/* Estilo para Erros */
+.error {
+  border: 2px solid red !important;
+}
+
+.error::placeholder {
+  color: red;
+}
+
+/* Estilo para Tarefas Concluídas */
+.completed {
+  text-decoration: line-through red;
+}
+
+.completed {
+  text-decoration: line-through red;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .new-task-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .new-task-input {
+    font-size: 0.9rem;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .new-task-button {
+    font-size: 0.9rem;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .new-task-button:hover {
+    transform: scale(1.05);
+  }
+
+  .tasks-container {
+    padding: 15px;
+  }
+}
